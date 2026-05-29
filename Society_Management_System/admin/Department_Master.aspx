@@ -1,6 +1,6 @@
 <%@ Page Title="" Language="C#" MasterPageFile="~/admin/Admin.Master" AutoEventWireup="true" CodeBehind="Department_Master.aspx.cs" Inherits="Society_Management_System.admin.Department_Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <title>Department List</title>
+    <title>Department Master</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <!-- Custom Stylesheet -->
@@ -109,8 +109,9 @@
                     </div>
                 </div>
             </div>
-            <div class="table table-striped table-bordered">
-                <asp:GridView ID="Department_Gridview" runat="server" CssClass="table table-striped table-bordered" AutoGenerateColumns="False" DataKeyNames="D_ID,Image,Department_Name" OnRowCommand="Department_Gridview_RowCommand">
+            <div class="table-responsive">
+                <asp:GridView ID="Department_Gridview" runat="server" CssClass="table table-striped table-bordered table-hover display" AutoGenerateColumns="False" DataKeyNames="D_ID,Image,Department_Name" OnRowCommand="Department_Gridview_RowCommand">
+                    <HeaderStyle CssClass="thead-primary" />
                     <Columns>
                         <asp:BoundField DataField="D_ID" HeaderText="ID" Visible="false" InsertVisible="False" ReadOnly="True" SortExpression="D_ID" />
                         <asp:BoundField DataField="Department_Name" HeaderText="Department Name" SortExpression="Department_Name" />
@@ -119,38 +120,23 @@
                         <asp:BoundField DataField="Pincode" HeaderText="Pincode" SortExpression="Pincode" />
                         <asp:BoundField DataField="No_of_Houses" HeaderText="Number of Houses" SortExpression="No_of_Houses" />
                         <asp:BoundField DataField="Image" HeaderText="Image" Visible="false" SortExpression="Image" />
-                        <asp:TemplateField HeaderText="Department Image" ItemStyle-Width="200px">
+                        <asp:TemplateField HeaderText="Department Image" ItemStyle-Width="150px" ItemStyle-CssClass="text-center">
                             <ItemTemplate>
-                                <asp:Image ID="Image1" runat="server" ImageUrl='<%# "Images/Department_Image/" + Eval("Image") %>' Width="100px" Height="100px" />
+                                <asp:Image ID="Image1" runat="server" ImageUrl='<%# "Images/Department_Image/" + Eval("Image") %>' CssClass="img-thumbnail rounded shadow-sm" Width="80px" Height="80px" style="object-fit: cover;" />
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:BoundField DataField="Entry_Date" HeaderText="Entry Date" SortExpression="Entry_Date" />
-                        <asp:TemplateField HeaderText="Action" ItemStyle-Width="200px">
+                        <asp:TemplateField HeaderText="Action" ItemStyle-Width="250px">
                             <ItemTemplate>
-                                <asp:Button ID="btnEdit" Text="Edit" CommandName="Edit1" CssClass="btn btn-success" OnClick="btnEdit_Click" CausesValidation="false" runat="server" />
-                                <asp:Button ID="btnDelete" runat="server" Text="Delete" CssClass="btn btn-danger" CausesValidation="false" CommandName="delete1" CommandArgument='<%# Eval("D_ID")%>' />
-                                <asp:Button ID="Add_Flat" runat="server" Text="Add Flat" CommandName="add_flat" CssClass="btn btn-success" CommandArgument='<%#Eval("D_ID") %>' CausesValidation="false" />
-                                <asp:Button ID="Add_Department_Image" runat="server" Text="Add Department Image" CommandName="Add_Department_Image" CssClass="btn btn-success" CommandArgument='<%#Eval("D_ID") %>' CausesValidation="false" />
+                                <div class="d-flex">
+                                    <asp:LinkButton ID="btnEdit" runat="server" CommandName="Edit1" OnClick="btnEdit_Click" CausesValidation="false" CssClass="btn btn-primary shadow btn-xs sharp mr-1" ToolTip="Edit"><i class="fa fa-pencil"></i></asp:LinkButton>
+                                    <asp:LinkButton ID="btnDelete" runat="server" CommandName="delete1" CommandArgument='<%# Eval("D_ID")%>' CausesValidation="false" CssClass="btn btn-danger shadow btn-xs sharp mr-2" ToolTip="Delete" OnClientClick="return message(this);"><i class="fa fa-trash"></i></asp:LinkButton>
+                                    <asp:LinkButton ID="Add_Flat" runat="server" CommandName="add_flat" CommandArgument='<%#Eval("D_ID") %>' CausesValidation="false" CssClass="btn btn-outline-info btn-xs mr-1"><i class="fa fa-building"></i> Flats</asp:LinkButton>
+                                    <asp:LinkButton ID="Add_Department_Image" runat="server" CommandName="Add_Department_Image" CommandArgument='<%#Eval("D_ID") %>' CausesValidation="false" CssClass="btn btn-outline-secondary btn-xs"><i class="fa fa-image"></i> Images</asp:LinkButton>
+                                </div>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
-                    <FooterStyle BackColor="White" ForeColor="#000066"></FooterStyle>
-
-                        <HeaderStyle BackColor="#eb8153" Font-Bold="True" ForeColor="White"></HeaderStyle>
-
-                        <PagerStyle HorizontalAlign="Left" BackColor="White" ForeColor="#000066"></PagerStyle>
-
-                        <RowStyle ForeColor="#000066"></RowStyle>
-
-                        <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White"></SelectedRowStyle>
-
-                        <SortedAscendingCellStyle BackColor="#F1F1F1"></SortedAscendingCellStyle>
-
-                        <SortedAscendingHeaderStyle BackColor="#007DBB"></SortedAscendingHeaderStyle>
-
-                        <SortedDescendingCellStyle BackColor="#CAC9C9"></SortedDescendingCellStyle>
-
-                        <SortedDescendingHeaderStyle BackColor="#00547E"></SortedDescendingHeaderStyle>
                 </asp:GridView>
                 
             </div>

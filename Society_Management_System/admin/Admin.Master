@@ -36,6 +36,24 @@
         .menu-toggle .deznav .metismenu > li:hover > a > .nav-text {
             display: none !important;
         }
+        
+        /* Hide default submenu bullets since we added custom icons */
+        .deznav .metismenu ul a::before {
+            display: none !important;
+        }
+
+        /* Position custom submenu icons correctly */
+        .deznav .metismenu ul a {
+            display: flex;
+            align-items: center;
+            padding-left: 3.4rem !important; /* standard padding */
+        }
+        .deznav .metismenu ul a i {
+            position: static;
+            transform: none;
+            margin-right: 15px !important;
+            font-size: 18px;
+        }
     </style>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -701,13 +719,9 @@
                 </nav>
                 <div class="sub-header">
                     <div class="d-flex align-items-center flex-wrap mr-auto">
-                        <h5 class="dashboard_bar">Dashboard</h5>
+                        <h5 class="dashboard_bar"><%: Page.Title %></h5>
                     </div>
-                    <div class="d-flex align-items-center">
-                        <a href="javascript:void(0);" class="btn btn-xs btn-primary light mr-1">Today</a>
-                        <a href="javascript:void(0);" class="btn btn-xs btn-primary light mr-1">Month</a>
-                        <a href="javascript:void(0);" class="btn btn-xs btn-primary light">Year</a>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -734,7 +748,7 @@
 
                     <li>
                         <a href="Admin_Dashboard.aspx" class="ai-icon" aria-expanded="false">
-                            <i class="flaticon-044-file"></i>
+                            <i class="flaticon-096-dashboard"></i>
                             <span class="nav-text">Main Menu</span>
                         </a>
                     </li>
@@ -743,7 +757,7 @@
 
                     <li>
                         <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                            <i class="flaticon-144-layout"></i>
+                            <i class="flaticon-077-menu-1"></i>
                             <span class="nav-text">Menu</span>
                         </a>
 
@@ -752,11 +766,7 @@
                             <%--<Department Master>--%>
 
                             <li>
-                                <a href="Department_Master.aspx" class="ai-icon" aria-expanded="false">
-
-                                    <span class="nav-text">Department</span>
-
-                                </a>
+                                <a href="Department_Master.aspx"><i class="flaticon-032-briefcase mr-2"></i> Department</a>
                             </li>
 
                             <%--</Department Master>--%>
@@ -765,11 +775,7 @@
                             <%--<House_Type Master>--%>
 
                             <li>
-                                <a href="House_Type_Master.aspx" class="ai-icon" aria-expanded="false">
-
-                                    <span class="nav-text">House Type</span>
-
-                                </a>
+                                <a href="House_Type_Master.aspx"><i class="flaticon-141-home mr-2"></i> House Type</a>
                             </li>
 
                             <%--</House_Type Master>--%>
@@ -778,11 +784,7 @@
                             <%--<Circular Master>--%>
 
                             <li>
-                                <a href="Circular_Master.aspx" class="ai-icon" aria-expanded="false">
-
-                                    <span class="nav-text">Circular</span>
-
-                                </a>
+                                <a href="Circular_Master.aspx"><i class="flaticon-044-file mr-2"></i> Circular</a>
                             </li>
 
                             <%--</Circular Master>--%>
@@ -791,11 +793,7 @@
                             <%--<Event Master>--%>
 
                             <li>
-                                <a href="Event_Master.aspx" class="ai-icon" aria-expanded="false">
-
-                                    <span class="nav-text">Event</span>
-
-                                </a>
+                                <a href="Event_Master.aspx"><i class="flaticon-163-calendar mr-2"></i> Event</a>
                             </li>
 
                             <%--</Event Master>--%>
@@ -804,11 +802,7 @@
                             <%--<Gallery Master>--%>
 
                             <li>
-                                <a href="Gallary_Master.aspx" class="ai-icon" aria-expanded="false">
-
-                                    <span class="nav-text">Gallery</span>
-
-                                </a>
+                                <a href="Gallary_Master.aspx"><i class="flaticon-063-picture mr-2"></i> Gallery</a>
                             </li>
 
                             <%--</Gallery Master>--%>
@@ -821,7 +815,7 @@
 
                 <li>
                     <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                        <i class="flaticon-144-layout"></i>
+                        <i class="flaticon-004-bar-chart"></i>
                         <span class="nav-text">Reports</span>
                     </a>
 
@@ -830,32 +824,20 @@
                         <%--<Department Master>--%>
 
                         <li>
-                            <a href="Department_reports.aspx" class="ai-icon" aria-expanded="false">
-
-                                <span class="nav-text">Department Reports</span>
-
-                            </a>
+                            <a href="Department_reports.aspx"><i class="flaticon-150-pie-chart mr-2"></i> Department Reports</a>
                         </li>
 
                         <%--</Department Master>--%>
 
                         <li>
-                            <a href="Flat_Reports.aspx" class="ai-icon" aria-expanded="false">
-
-                                <span class="nav-text">Flat Reports</span>
-
-                            </a>
+                            <a href="Flat_Reports.aspx"><i class="flaticon-004-bar-chart mr-2"></i> Flat Reports</a>
                         </li>
 
 
                         <%--<House_Type Master>--%>
 
                         <li>
-                            <a href="Allotment_reports.aspx" class="ai-icon" aria-expanded="false">
-
-                                <span class="nav-text">Allotment Reports</span>
-
-                            </a>
+                            <a href="Allotment_reports.aspx"><i class="flaticon-149-diagram mr-2"></i> Allotment Reports</a>
                         </li>
 
                         <%--</House_Type Master>--%>
@@ -904,7 +886,7 @@
                         </li>--%>
                         <li>
                             <a href="../Home.aspx" class="ai-icon" aria-expanded="false">
-                                <i class="flaticon-044-file"></i>
+                                <i class="flaticon-059-log-out"></i>
                                 <span class="nav-text">Logout</span>
                             </a>
                         </li>
@@ -954,7 +936,7 @@
         ***********************************-->
         <div class="footer">
             <div class="copyright">
-                <p>Copyright © Designed &amp; Developed by <a href="../Admin_Dashboard.aspx" target="_blank">Us</a> 2021</p>
+                <p>Copyright &copy; <%: DateTime.Now.Year %> Society Management System. All Rights Reserved.</p>
             </div>
         </div>
         <!--**********************************

@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/Admin.Master" AutoEventWireup="true" CodeBehind="Flat_Master.aspx.cs" Inherits="Society_Management_System.admin.Flat_Master" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/admin/Admin.Master" AutoEventWireup="true" CodeBehind="Flat_Master.aspx.cs" Inherits="Society_Management_System.admin.Flat_Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-      <title>Flat List</title>
+      <title>Flat Master</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <!-- Custom Stylesheet -->
@@ -91,6 +91,7 @@
                                 </div>
                                 <asp:Button ID="btn_Save" runat="server" Text="Save" CssClass="btn btn-rounded btn-outline-success" ValidationGroup="flat" OnClick="btn_Save_Click" />
                                 <asp:Button ID="btn_Clear" class="btn btn-rounded btn-outline-success" runat="server" Text="Clear" OnClick="btn_Clear_Click" />
+                                <a href="Department_Master.aspx" class="btn btn-rounded btn-outline-primary ml-2"><i class="fa fa-arrow-left"></i> Back to Department</a>
                             </form>
                         </div>
                     </div>
