@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="Society_Management_System.admin.Admin" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="Society_Management_System.admin.Admin" %>
 
 <!DOCTYPE html>
 
@@ -28,6 +28,15 @@
 
 
 
+    <style>
+        /* Hide broken empty white box on sidebar hover in mini mode or when menu is toggled */
+        [data-sidebar-style="mini"] .deznav .metismenu > li:hover > ul,
+        [data-sidebar-style="mini"] .deznav .metismenu > li:hover > a > .nav-text,
+        .menu-toggle .deznav .metismenu > li:hover > ul,
+        .menu-toggle .deznav .metismenu > li:hover > a > .nav-text {
+            display: none !important;
+        }
+    </style>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -1024,27 +1033,21 @@
     </script>
 
 
-    <script src="js/dashboard/dashboard-1.js"></script>
 
-    <script src="vendor/owl-carousel/owl.carousel.js"></script>
-    <script src="js/custom.min.js"></script>
-    <script src="js/deznav-init.js"></script>
-    <script src="js/demo.js"></script>
-    <script src="js/styleSwitcher.js"></script>
 
     <!-- Page specific script -->
     <script>
-        var req = Sys.WebForms.PageRequestManager.getInstance();
-        if (req != null) {
+        // var req = Sys.WebForms.PageRequestManager.getInstance();
+        // if (req != null) {
 
-            req.add_endRequest(function () {
-                BindControls();
-            });
-        }
+        //     req.add_endRequest(function () {
+        //         // BindControls();
+        //     });
+        // }
 
         $(document).ready(function () {
 
-            BindControls();
+            // BindControls();
         });
 
 

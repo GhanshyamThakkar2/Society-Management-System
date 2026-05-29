@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/Admin.Master" AutoEventWireup="true" CodeBehind="Department_Master.aspx.cs" Inherits="Society_Management_System.admin.Department_Master" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/admin/Admin.Master" AutoEventWireup="true" CodeBehind="Department_Master.aspx.cs" Inherits="Society_Management_System.admin.Department_Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Department List</title>
     <!-- Favicon icon -->
