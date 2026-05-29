@@ -42,6 +42,12 @@
             display: none !important;
         }
 
+        /* Force vertical scrolling for the sidebar if content exceeds height */
+        .deznav-scroll {
+            overflow-y: auto !important;
+            height: 100%;
+        }
+
         /* Position custom submenu icons correctly */
         .deznav .metismenu ul a {
             display: flex;
@@ -892,8 +898,7 @@
                         </li>
                 </li>
                 <div class="copyright">
-                    <p><strong>Arravali Admin Dashboard</strong> © 2023 All Rights Reserved</p>
-                    <p class="fs-12">Made with <span class="heart"></span>by Our team</p>
+                    <p><strong>Society Management System</strong><br/>&copy; <%: DateTime.Now.Year %> All Rights Reserved</p>
                 </div>
 
             </div>

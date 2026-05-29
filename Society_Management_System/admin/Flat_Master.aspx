@@ -71,7 +71,7 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>House Type</label>
-                                        <asp:DropDownList ID="h_type" runat="server" class="form-control" placeholder="Enter House Type" AutoPostBack="True" DataTextField="House_Type" DataValueField="House_Type" DataSourceID="SqlDataSource1"></asp:DropDownList>
+                                        <asp:DropDownList ID="h_type" runat="server" class="form-control default-select" placeholder="Enter House Type" AutoPostBack="True" DataTextField="House_Type" DataValueField="House_Type" DataSourceID="SqlDataSource1"></asp:DropDownList>
                                         <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:Society_ConnectionString %>' SelectCommand="SELECT [House_Type] FROM [House_Type_Master] WHERE ([D_ID] = @D_ID)">
                                             <SelectParameters>
                                                 <asp:SessionParameter SessionField="flat" DefaultValue="0" Name="D_ID" Type="Int32"></asp:SessionParameter>
